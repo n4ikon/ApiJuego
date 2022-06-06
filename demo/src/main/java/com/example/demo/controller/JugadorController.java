@@ -7,9 +7,10 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
+@RequestMapping("/Jugador")
 public class JugadorController {
 
-    private JugadorService jugadorService;
+    public JugadorService jugadorService;
 
     public JugadorController(JugadorService jugadorService) {
         this.jugadorService = jugadorService;
