@@ -17,6 +17,8 @@ public class JugadorController {
     }
 
 
+
+
     @PostMapping
     public Jugador registrar(@RequestBody Jugador jugador) {
         return jugadorService.agregar(jugador);
