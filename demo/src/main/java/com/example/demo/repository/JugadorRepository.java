@@ -9,5 +9,5 @@ import java.util.List;
 @Repository
 public interface JugadorRepository extends MongoRepository<Jugador,Integer> {
 
-
+    Jugador findJugadorByNombre(String nombre);
 }

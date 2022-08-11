@@ -2,6 +2,7 @@ package com.example.demo.controller;
 
 import com.example.demo.model.Jugador;
 import com.example.demo.service.JugadorService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -10,14 +11,8 @@ import java.util.List;
 @RequestMapping("/Jugador")
 public class JugadorController {
 
+    @Autowired
     public JugadorService jugadorService;
-
-    public JugadorController(JugadorService jugadorService) {
-        this.jugadorService = jugadorService;
-    }
-
-
-
 
     @PostMapping
     public Jugador registrar(@RequestBody Jugador jugador) {
@@ -28,6 +23,12 @@ public class JugadorController {
     @GetMapping
     public List<Jugador> listar() {
         return jugadorService.listar();
+    }
+
+    @GetMapping("/{nombre}")
+    public Jugador encontrarJugadorPorNombre(@RequestParam String nombre) {
+        return jugadorService.buscarJugadorPorNombre(nombre);
+
     }
 
 }
