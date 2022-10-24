@@ -19,6 +19,7 @@ public class AuthService {
             if (!jugador.isPresent()) {
                 return false;
             }
+
             if(!Objects.equals(jugador.get().getNombre(), nombre)) {
                 return false;
             }
