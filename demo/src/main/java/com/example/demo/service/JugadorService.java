@@ -11,8 +11,13 @@ public class JugadorService {
     @Autowired
    public JugadorRepository jugadorRepository;
 
-    public Jugador agregar(Jugador jugador){
-        return jugadorRepository.save(jugador);
+    public Jugador agregar(Jugador jugador) throws Exception{
+        try {
+            return jugadorRepository.save(jugador);
+
+        } catch (Exception err) {
+            throw new Exception("Error, posible duplicado");
+        }
     }
     public List<Jugador> listar(){
         return jugadorRepository.findAll();
