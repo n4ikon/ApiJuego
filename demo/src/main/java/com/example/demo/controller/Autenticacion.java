@@ -19,4 +19,5 @@ public class Autenticacion {
     public boolean login(@RequestBody LoginCredentialsDto credenciales) {
         return authService.login(credenciales.nombre, credenciales.password);
     }
+
 }

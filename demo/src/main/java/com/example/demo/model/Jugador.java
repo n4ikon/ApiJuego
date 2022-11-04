@@ -6,11 +6,12 @@ import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.index.Indexed;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.mongodb.core.mapping.Field;
+import org.springframework.web.bind.annotation.PutMapping;
 
 import javax.validation.constraints.NotNull;
 
 @Data
-@Document(collection = "users")
+@Document(collection = "jugadortres")
 public class Jugador {
 
     @Id
@@ -24,5 +25,10 @@ public class Jugador {
 
 
     private String password;
+
+    private double posicionX ;
+    private double posicionY ;
+
+
 
 }

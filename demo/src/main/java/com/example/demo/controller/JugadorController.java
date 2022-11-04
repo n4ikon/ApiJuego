@@ -1,9 +1,11 @@
 package com.example.demo.controller;
 
+import com.example.demo.dto.GuardadoUsuario;
 import com.example.demo.model.Jugador;
 import com.example.demo.model.Response;
 import com.example.demo.service.JugadorService;
 import org.springframework.beans.factory.annotation.Autowired;
+
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -16,6 +18,7 @@ public class JugadorController {
 
     @Autowired
     public JugadorService jugadorService;
+
 
     @PostMapping
     public ResponseEntity<Response> registrar(@RequestBody Jugador jugador) throws Exception {
@@ -44,6 +47,13 @@ public class JugadorController {
         return jugadorService.buscarJugadorPorNombre(nombre);
 
     }
+
+    @PutMapping
+    public  Jugador Update (@RequestBody GuardadoUsuario jugador) throws Exception {
+        return    jugadorService.cargar(jugador);}
+
+
+
 
 }
 
