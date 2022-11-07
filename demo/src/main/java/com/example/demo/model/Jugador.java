@@ -2,6 +2,7 @@ package com.example.demo.model;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Data;
+import org.springframework.data.annotation.Version;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.index.Indexed;
 import org.springframework.data.mongodb.core.mapping.Document;
@@ -18,6 +19,8 @@ public class Jugador {
     @Id
 
     private String id;
+
+
 
     @NotNull
 

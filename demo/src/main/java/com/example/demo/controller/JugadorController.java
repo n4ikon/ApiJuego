@@ -46,7 +46,6 @@ public class JugadorController {
     @GetMapping("/{nombre}")
     public Optional<Jugador> encontrarJugadorPorNombre(@RequestParam String nombre) {
         return jugadorService.buscarJugadorPorNombre(nombre);
-
     }
 
     @PutMapping
