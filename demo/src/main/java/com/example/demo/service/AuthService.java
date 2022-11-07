@@ -15,7 +15,7 @@ public class AuthService {
 
     public boolean login(String nombre, String password) {
         try {
-            Optional<Jugador> jugador = Optional.ofNullable(jugadorRepository.findJugadorByNombre(nombre));
+            Optional<Jugador> jugador = (jugadorRepository.findJugadorByNombre(nombre));
             if (!jugador.isPresent()) {
                 return false;
             }

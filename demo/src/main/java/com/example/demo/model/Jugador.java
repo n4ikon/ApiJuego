@@ -14,13 +14,13 @@ import javax.validation.constraints.NotNull;
 @Document(collection = "jugadortres")
 public class Jugador {
 
+    public static String getnombre;
     @Id
-    @Field("_id")
-    @JsonIgnore
+
     private String id;
 
     @NotNull
-    @Indexed(unique = true)
+
     private String nombre;
 
 
@@ -28,7 +28,6 @@ public class Jugador {
 
     private double posicionX ;
     private double posicionY ;
-
 
 
 }

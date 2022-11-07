@@ -11,6 +11,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 @RequestMapping("/Jugador")
@@ -43,7 +44,7 @@ public class JugadorController {
     }
 
     @GetMapping("/{nombre}")
-    public Jugador encontrarJugadorPorNombre(@RequestParam String nombre) {
+    public Optional<Jugador> encontrarJugadorPorNombre(@RequestParam String nombre) {
         return jugadorService.buscarJugadorPorNombre(nombre);
 
     }
